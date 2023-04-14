@@ -24,9 +24,12 @@ def test_rectangle():
     b = 20
     # TODO сосчитайте периметр
     perimeter = 2 * a + 2 * b
+    print(perimeter)
     assert perimeter == 60
     # TODO сосчитайте площадь
     area = a * b
+    # Вывод на экран для наглядности, хоть в задании не сказано
+    print(area)
     assert area == 200
     
 
@@ -38,11 +41,13 @@ def test_circle():
     r = 23
     # TODO сосчитайте площадь
     area = pi * r ** 2
+    print(area)
     assert area == 1661.9025137490005
     # TODO сосчитайте длину окружности
     length = 2 * pi * r
+    print(length)
     assert length == 144.51326206513048
-    print(f'Длина окружности равна: {length}, Площадб круга равна: {area}')
+    
 
 
 def test_random_list():
@@ -51,6 +56,8 @@ def test_random_list():
     """
     # TODO создайте список
     l = [randint(1, 100) for i in range(10)]
+    l.sort()
+	print(l)
     assert len(l) == 10
     assert l[0] < l[-1]
 
@@ -62,6 +69,8 @@ def test_unique_elements():
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
     # TODO удалите повторяющиеся элементы
     l = list(set(l))
+    # Вывод на экран для наглядности, хоть в задании не сказано
+    print(l)
     assert isinstance(l, list)
     assert len(l) == 10
     assert l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -78,8 +87,9 @@ def test_dicts():
     second = [1, 2, 3, 4, 5]
     # TODO создайте словарь
     d = dict(zip(first, second))
-    assert isinstance(d, dict)
-    assert len(d) == 5
     for i in d:
         print(d[i], end=' ')
     #print(*second)
+    assert isinstance(d, dict)
+    assert len(d) == 5
+    
